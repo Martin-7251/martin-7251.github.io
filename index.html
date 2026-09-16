@@ -143,8 +143,9 @@
     .education-cards {
       display: grid;
       /* Creates 3 equal columns on large screens, scales down on smaller screens */
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-      gap: 2rem; 
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      row-gap: 2rem;
+      column-gap: 2rem; 
       margin-top: 2rem;
       padding: 0 1rem;
       max-width: 1000px; /* Keeps the grid from stretching too wide on huge monitors */
