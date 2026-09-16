@@ -141,12 +141,15 @@
     }
 
     .education-cards {
-      display: flex;
-      justify-content: flex-start;
-      flex-wrap: wrap;
-      gap: 2rem;
+      display: grid;
+      /* Creates 3 equal columns on large screens, scales down on smaller screens */
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+      gap: 2rem; 
       margin-top: 2rem;
       padding: 0 1rem;
+      max-width: 1000px; /* Keeps the grid from stretching too wide on huge monitors */
+      margin-left: auto;  /* Centers the entire grid container on the page */
+      margin-right: auto;
     }
     .flip-card {
       background: transparent;
