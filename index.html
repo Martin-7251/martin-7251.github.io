@@ -172,8 +172,15 @@
       cursor: pointer;
       box-sizing: border-box;
     }
-    /* Flip on hover (desktop/mouse) AND on .flipped class (touch/click/keyboard) */
-    .flip-card:hover .flip-card-inner,
+    /* Flip on hover, but only for devices that actually support hover (desktop/mouse).
+       On touch devices, tapping "sticks" a hover state that fights the tap-to-flip
+       toggle below, so hover-driven flipping is scoped out of touch devices entirely. */
+    @media (hover: hover) {
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg) scale(1.03);
+      }
+    }
+    /* Flip on .flipped class (touch/click/keyboard) */
     .flip-card-inner.flipped {
       transform: rotateY(180deg) scale(1.03);
     }
@@ -384,7 +391,7 @@
     <img src="Martin's Photo.jpg" alt="Martin Kamau" class="profile-pic">
     <h1>Martin Kamau</h1>
     <p>Data Engineer | dbt | Snowflake | Python | SQL | Airflow | Power BI</p>
-    <a href="Martin_Kamau_Resume_Data_Engineer.pdf" download class="resume-btn">Download Resume</a>
+    <a href="martin-kamau-resume.pdf" download class="resume-btn">Download Resume</a>
   </header>
 
   <nav>
